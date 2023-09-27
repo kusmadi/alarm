@@ -38,7 +38,7 @@ class AndroidAlarm {
     String assetAudioPath,
     bool loopAudio,
     bool vibrate,
-    bool volumeMax,
+    double? volume,
     double fadeDuration,
     bool enableNotificationOnKill,
   ) async {
@@ -57,7 +57,7 @@ class AndroidAlarm {
         alarmPrint('$message');
         if (message == 'ring') {
           ringing = true;
-          if (volumeMax) setMaximumVolume();
+          if (volume != null) setMaximumVolume();
           onRing?.call();
         } else {
           if (vibrate && message is String && message.startsWith('vibrate')) {
