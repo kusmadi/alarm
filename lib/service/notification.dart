@@ -101,6 +101,7 @@ class AlarmNotification {
       presentSound: false,
     );
 
+    DefaultStyleInformation bigNotifycationStyle = BigTextStyleInformation(body);
     const androidPlatformChannelSpecifics = AndroidNotificationDetails(
       'alarm',
       'alarm_plugin',
@@ -109,6 +110,7 @@ class AlarmNotification {
       priority: Priority.max,
       playSound: false,
       enableLights: true,
+      styleInformation: bigNotifycationStyle,
     );
 
     const platformChannelSpecifics = NotificationDetails(
